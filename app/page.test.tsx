@@ -1,13 +1,8 @@
-import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
+import { expect, test } from "vitest";
 import Home from "./page";
 
-describe("Page", () => {
-  it("renders a heading", () => {
-    render(<Home />);
-
-    const heading = screen.getByRole("heading", { level: 1 });
-
-    expect(heading).toBeInTheDocument();
-  });
+test("Page", () => {
+  render(<Home />);
+  expect(screen.getByRole("heading", { level: 1, name: "Home" })).toBeDefined();
 });
