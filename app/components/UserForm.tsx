@@ -38,7 +38,7 @@ export function UserForm() {
   return (
     <div className="w-full max-w-md rounded-lg border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
       <h2 className="mb-6 text-2xl font-bold text-zinc-900 dark:text-zinc-100">
-        ユーザー登録フォーム
+        ユーザー登録フォーム テスト
       </h2>
 
       <form
@@ -48,7 +48,7 @@ export function UserForm() {
         noValidate
       >
         {/* 名前フィールド */}
-        <div className="mb-4">
+        <div className="mb-6">
           <label
             htmlFor={fields.name.id}
             className="mb-2 block text-sm font-medium text-zinc-700 dark:text-zinc-300"
