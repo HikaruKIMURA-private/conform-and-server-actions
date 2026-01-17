@@ -1,4 +1,5 @@
 import react from "@vitejs/plugin-react";
+import tsconfigPaths from "vite-tsconfig-paths";
 import { defineConfig } from "vitest/config";
 
 // https://vitejs.dev/config/
@@ -13,17 +14,23 @@ const dirname =
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), tsconfigPaths()],
   test: {
     environment: "jsdom",
     projects: [
       // 通常のテスト用プロジェクト（.test.tsx ファイル用）
       {
         name: "unit",
+        resolve: {
+          alias: {
+            "@": path.resolve(dirname, "."),
+          },
+        },
         test: {
           include: ["**/*.test.{ts,tsx}"],
           exclude: ["**/node_modules/**", "**/dist/**", "**/.storybook/**"],
           environment: "jsdom",
+          setupFiles: ["./vitest.setup.ts"],
         },
       },
       // Storybook用プロジェクト（.stories.ts ファイル用）
