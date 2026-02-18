@@ -20,13 +20,13 @@ export default defineConfig({
     projects: [
       // 通常のテスト用プロジェクト（.test.tsx ファイル用）
       {
-        name: "unit",
         resolve: {
           alias: {
             "@": path.resolve(dirname, "."),
           },
         },
         test: {
+          name: "unit",
           include: ["**/*.test.{ts,tsx}"],
           exclude: ["**/node_modules/**", "**/dist/**", "**/.storybook/**"],
           environment: "jsdom",

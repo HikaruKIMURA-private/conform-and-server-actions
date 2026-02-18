@@ -3,6 +3,11 @@ import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { UserForm } from "./UserForm";
 
+// Server Actionをモック（DB依存を回避）
+vi.mock("../actions", () => ({
+  submitProfileForm: vi.fn(),
+}));
+
 // useActionState をモック
 vi.mock("react", async () => {
   const actual = await vi.importActual<typeof import("react")>("react");
