@@ -1,5 +1,5 @@
-import * as schema from "@/src/db/schema";
-import { db } from "@/src/index"; // your drizzle instance
+import * as schema from "@/db/schema";
+import { db } from "@/db";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { nextCookies } from "better-auth/next-js";

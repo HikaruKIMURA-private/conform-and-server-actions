@@ -37,9 +37,9 @@ Next.js App Router の規約に沿った **ルートベース構成** を採用�
 
 ### Database Layer
 
-**Location**: `src/db/schema.ts`, `src/index.ts`  
+**Location**: `db/schema.ts`, `db/index.ts`  
 **Purpose**: Drizzle ORM スキーマ定義とデータベース接続  
-**Pattern**: `src/` 配下に DB 関連を集約
+**Pattern**: プロジェクトルートの `db/` に DB 関連を集約
 
 ### Auth Configuration
 
@@ -75,7 +75,7 @@ import { Card } from "@/components/ui/card";
 
 // 2. ライブラリ・ユーティリティ（@/ エイリアス）
 import { authClient } from "@/lib/auth-client";
-import { db } from "@/src/index";
+import { db } from "@/db";
 
 // 3. ローカルモジュール（相対パス）
 import { profileFormSchema } from "../schema";

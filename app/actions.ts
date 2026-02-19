@@ -3,8 +3,8 @@
 import type { SubmissionResult } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod/v3";
 import { auth } from "@/auth";
-import { db } from "@/src/index";
-import { profile } from "@/src/db/schema";
+import { db } from "@/db";
+import { profile } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { headers } from "next/headers";
 import { type ProfileFormData, profileFormSchema } from "./schema";
