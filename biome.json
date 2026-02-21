@@ -15,7 +15,13 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"style": {
+				"noNonNullAssertion": "off"
+			},
+			"a11y": {
+				"noLabelWithoutControl": "off"
+			}
 		}
 	},
 	"javascript": {
@@ -23,7 +29,17 @@
 			"quoteStyle": "double"
 		}
 	},
-	"organizeImports": {
-		"enabled": true
+	"css": {
+		"parser": {
+			"cssModules": true,
+			"tailwindDirectives": true
+		}
+	},
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
 	}
 }
